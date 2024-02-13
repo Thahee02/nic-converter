@@ -1,4 +1,6 @@
 import lankaNic from "lanka-nic-2019";
+import maleImage from "../img/male.jpg";
+import femaleImage from "../img/female.jpg";
 
 const formEl = document.querySelector("form");
 const nicEl = document.querySelector("input");
@@ -9,10 +11,7 @@ const genderEl = document.querySelector("#gender");
 const dobEl = document.querySelector("#dob");
 const nicInfoEl = document.querySelector("#nicInfo");
 
-const male = "./assets/img/male.jpg";
-const female = "./assets/img/female.jpg";
-
-let getNIC = () => {
+const getNIC = () => {
   if (nicEl.value == "") {
     alert("Please enter your NIC number");
     nicEl.focus();
@@ -26,15 +25,15 @@ let getNIC = () => {
       } else {
         newNicNoEl.textContent = nicInfo.newFormat;
       }
-
       let gender = nicInfo.gender;
       genderEl.textContent = gender;
-      if (gender == "Male") {
-        avatarEl.setAttribute("src", male);
-      } else {
-        avatarEl.setAttribute("src", female);
-      }
       dobEl.textContent = nicInfo.birthday;
+
+      if (gender == "Male") {
+        avatarEl.src = maleImage;
+      } else {
+        avatarEl.src = femaleImage;
+      }
     } else {
       alert("Invalid NIC number! please enter your valid NIC number");
     }
