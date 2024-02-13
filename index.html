@@ -3,14 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>NIC Converter | AMM. Hathil Thahee</title>
 
     <!-- TailwindCSS -->
     <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body>
-    <!-- Write your HTML here -->
-    <div id="app" class="text-3xl font-bold">Hello Vite HTML & Tailwind!</div>
+    
+    <main
+      class="bg-gray-900 w-full h-screen flex flex-col justify-center items-center text-white py-2"
+    >
+      <div class="max-w-lg p-5">
+        <div class="flex items-center justify-between">
+          <h1 class="text-xl font-semibold">NIC Converter</h1>
+          <a href="https://thahee02.github.io/Thahee-Portfolio/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M5.85 17.1q1.275-.975 2.85-1.537T12 15q1.725 0 3.3.563t2.85 1.537q.875-1.025 1.363-2.325T20 12q0-3.325-2.337-5.663T12 4Q8.675 4 6.337 6.338T4 12q0 1.475.488 2.775T5.85 17.1M12 13q-1.475 0-2.488-1.012T8.5 9.5q0-1.475 1.013-2.488T12 6q1.475 0 2.488 1.013T15.5 9.5q0 1.475-1.012 2.488T12 13m0 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22"
+              />
+            </svg>
+          </a>
+        </div>
+        <hr />
+        <p class="text-xs my-5 mx-auto">
+          This app use to convert old NIC to new NIC and find DOB (Date of
+          Birth) and Gender using your NIC number. Developed by
+          <a
+            href="https://thahee02.github.io/Thahee-Portfolio/"
+            class="border-b-2"
+            >AMM. Hathil Thahee</a
+          >
+        </p>
+        <form action="" class="max-w-xs mx-auto">
+          <label for="nic" class="text-sm">NIC Number:</label>
+          <div class="flex items-center gap-2">
+            <input
+              id="nic"
+              type="text"
+              placeholder="Enter your NIC number"
+              class="px-2 py-1 rounded outline-none text-gray-900 uppercase placeholder:capitalize"
+            />
+            <button
+              type="submit"
+              class="bg-gray-700 px-4 py-2 rounded text-sm font-semibold"
+            >
+              Find
+            </button>
+          </div>
+        </form>
+        <div
+          id="nicInfo"
+          class="border-2 my-5 rounded p-2 max-w-xs hidden mx-auto"
+        >
+          <h4 class="font-semibold text-center text-lg">NIC Information</h4>
+          <img
+            id="avatar"
+            src=""
+            alt="avatar"
+            class="rounded-full w-24 h-24 mx-auto my-3 border-2"
+          />
+          <div class="mt-3 text-sm mx-auto">
+            <p class="">NIC Number: <span id="nicNo"></span></p>
+            <p class="">New Format: <span id="newNicNo"></span></p>
+            <p class="">Gender: <span id="gender"></span></p>
+            <p class="">Date of Birth (DOB): <span id="dob"></span></p>
+          </div>
+        </div>
+      </div>
+    </main>
     <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
