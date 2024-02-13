@@ -41,8 +41,8 @@ const getNIC = async () => {
   }
 };
 
-formEl.addEventListener("submit", (e) => {
+formEl.addEventListener("submit", async(e) => {
   e.preventDefault();
-  getNIC();
+  await getNIC();
 });
 
