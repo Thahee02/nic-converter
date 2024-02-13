@@ -12,7 +12,7 @@ const nicInfoEl = document.querySelector("#nicInfo");
 const male = "./assets/img/male.jpg";
 const female = "./assets/img/female.jpg";
 
-const getNIC = () => {
+const getNIC = async () => {
   if (nicEl.value == "") {
     alert("Please enter your NIC number");
     nicEl.focus();
@@ -26,8 +26,10 @@ const getNIC = () => {
       } else {
         newNicNoEl.textContent = nicInfo.newFormat;
       }
-      genderEl.textContent = nicInfo.gender;
-      if (nicInfo.gender == "Male") {
+
+      let gender = await nicInfo.gender
+      genderEl.textContent = gender;
+      if (gender == "Male") {
         avatarEl.src = male;
       } else {
         avatarEl.src = female;
